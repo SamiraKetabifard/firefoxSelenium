@@ -5,7 +5,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverManager {
-
     public static WebDriver getDriver() {
         WebDriver webDriver = driver.get();
         if (webDriver == null) {
@@ -19,14 +18,12 @@ public class DriverManager {
         WebDriver webDriver;
         switch (browser.toLowerCase()) {
             case "chrome":
-                System.setProperty(
-                        "webdriver.chrome.driver",
+                System.setProperty("webdriver.chrome.driver",
                         "C:\\Users\\parsian\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
                 webDriver = new ChromeDriver();
                 break;
             case "firefox":
-                System.setProperty(
-                        "webdriver.gecko.driver",
+                System.setProperty("webdriver.gecko.driver",
                         "C:\\Users\\parsian\\Downloads\\geckodriver-v0.37.1-win64\\geckodriver.exe");
                 webDriver = new FirefoxDriver();
                 break;
