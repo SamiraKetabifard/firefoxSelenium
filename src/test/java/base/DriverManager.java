@@ -13,7 +13,6 @@ public class DriverManager {
         }
         return webDriver;
     }
-
     private static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
     public static WebDriver initDriver(String browser) {

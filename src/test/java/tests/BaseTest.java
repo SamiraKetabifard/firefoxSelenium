@@ -11,7 +11,6 @@ public class BaseTest {
     @Parameters("browser")
     @BeforeMethod
     public void setup(@Optional("chrome") String browser) {
-
         driver = DriverManager.initDriver(browser);
         driver.get("https://www.google.com");
     }
