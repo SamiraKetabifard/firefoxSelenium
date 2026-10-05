@@ -12,16 +12,11 @@ public class BaseTest {
     @BeforeMethod
     public void setup(@Optional("chrome") String browser) {
 
-        System.out.println("Running on browser: " + browser);
-
         driver = DriverManager.initDriver(browser);
-
         driver.get("https://www.google.com");
     }
-
     @AfterMethod
     public void tearDown() {
-
         DriverManager.quitDriver();
     }
 }

@@ -10,43 +10,15 @@ import java.time.Duration;
 
 public class GoogleTest extends BaseTest {
 
-
     @Test
     public void googleSearchTest() {
-
-
-        WebDriverWait wait = new WebDriverWait(
-                driver,
-                Duration.ofSeconds(10)
-        );
-
-
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         // wait until search box visible
-        wait.until(
-                ExpectedConditions.visibilityOfElementLocated(
-                        By.name("q")
-                )
-        );
-
-
-        driver.findElement(By.name("q"))
-                .sendKeys("Selenium WebDriver", Keys.ENTER);
-
-
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("q")));
+        driver.findElement(By.name("q")).sendKeys("Selenium WebDriver", Keys.ENTER);
         // wait until result page title loaded
-        wait.until(
-                ExpectedConditions.titleContains("Selenium")
-        );
-
-
+        wait.until(ExpectedConditions.titleContains("Selenium"));
         String actualTitle = driver.getTitle();
-
-        System.out.println("TITLE = " + actualTitle);
-
-
-        Assert.assertTrue(
-                actualTitle.contains("Selenium"),
-                "Title does not contain Selenium"
-        );
+        Assert.assertTrue(actualTitle.contains("Selenium"), "Title does not contain Selenium");
     }
 }
